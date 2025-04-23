@@ -1,5 +1,9 @@
 const express = require("express");
 
+const path = require('path')
+
+const ejs = require('ejs')
+
 const { routes } = require("./routes/routes");
 
 const { connectToMongoDB } = require("./db_connections/mongo");
@@ -7,6 +11,10 @@ const { connectToMongoDB } = require("./db_connections/mongo");
 const app = express();
 
 app.use(express.json())
+
+app.set('view engine', 'ejs')
+
+app.set('views', path.resolve('./views/'))
 
 const port = process.env.PORT || "3000";
 

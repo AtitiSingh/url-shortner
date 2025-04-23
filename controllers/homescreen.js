@@ -1,7 +1,8 @@
 const URL = require('../models/url')
 
 const landingPage = (req, res)=>{
-    return res.send('Welcome to url shortner app')
+    // return res.send('Welcome to url shortner app')
+    return res.render('home')
 }
 
 const redirectUrl = async(req, res)=>{
